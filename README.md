@@ -1,5 +1,10 @@
 # week4_rover
 
-Go to launch folder - and try to figure which launch is for which purpose, if you have done previous assignment - you would know what all commands to run
 
-Make sure you have gazebo installed and working
+**Launch the robot model in Gazebo **
+
+   ```bash
+   ros2 launch week4 gazebo_launch.py
+   ```
+
+Make sure you have gazebo installed and working. 
