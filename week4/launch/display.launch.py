@@ -7,11 +7,18 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     
-    # Get the urdf file path
-    urdf = '/home/saksham-22/kratos/src/week4/urdf/my_rover.urdf'
+    urdf = os.path.join(
+    get_package_share_directory('week4'),
+    'urdf',
+    'my_rover.urdf')
     
-    # Get the rviz config file path
-    rviz_config = '/home/saksham-22/kratos/src/week4/rviz/rover.rviz'
+    rviz_config = os.path.join(
+    get_package_share_directory('week4_arm'),
+    'rviz',
+    'rover.rviz')
+    
+
+
     
     # Read the URDF file
     with open(urdf, 'r') as infp:

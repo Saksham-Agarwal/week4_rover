@@ -7,9 +7,23 @@ from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
 def generate_launch_description():
+    urdf = os.path.join(
+    get_package_share_directory('week4'),
+    'urdf',
+    'my_rover_gazebo.urdf')
     
     # Get the urdf file path
-    urdf = '/home/saksham-22/kratos/src/week4/urdf/my_rover_gazebo.urdf'
+    controller_config = os.path.join(
+    get_package_share_directory('week4'),
+    'config',
+    'rover_controllers.yaml')
+    
+    rviz_config = os.path.join(
+    get_package_share_directory('week4'),
+    'rviz',
+    'rover.rviz')
+    
+
     
     # Get the controller config file path
     controller_config = '/home/saksham-22/kratos/src/week4/config/rover_controllers.yaml'
@@ -137,6 +151,6 @@ def generate_launch_description():
             executable='rviz2',
             name='rviz2',
             output='screen',
-            arguments=['-d', '/home/saksham-22/kratos/src/week4/rviz/rover.rviz'],
+            arguments=['-d', rviz_config],
         ),
     ])
